@@ -32,3 +32,18 @@ export const integration = (path: string): number => {
     const sorted2: number[] = orderNumberAscending(numberArrays[1]);
     return determineDifference(sorted1, sorted2);
 }
+
+export const getAmount = (array: number[], targetNumber: number): number => {
+    const filteredArray = array.filter(item => item === targetNumber);
+    return filteredArray.length;
+}
+
+export const integrationSecondStar = (path: string): number => {
+    const numberArrays: [number[], number[]] = parseInputFile(path);
+    const sorted1: number[] = orderNumberAscending(numberArrays[0]);
+    const sorted2: number[] = orderNumberAscending(numberArrays[1]);
+    
+    let result: number = 0;
+    sorted1.forEach(number => { result += getAmount(sorted2, number) * number});
+    return result;
+}

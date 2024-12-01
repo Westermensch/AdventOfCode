@@ -34,3 +34,21 @@ test('Too lazy to write a main function', () => {
     const result: number = Input.integration('./tests/real.txt');
     expect(result).toEqual(1938424);
 });
+
+test('findAmount should return 3 if the number is in the array three times', () => {
+    const testArray: number[] = [1, 2, 3, 2, 2, 6];
+    expect(Input.getAmount(testArray, 2)).toEqual(3)
+})
+
+test('findAmount should return 0 if the number is not in the array', () => {
+    const testArray: number[] = [1, 2, 3, 2, 2, 6];
+    expect(Input.getAmount(testArray, 22)).toEqual(0)
+})
+
+test('integrationSecondStar is run with example text file, should return 31', () => {
+    expect(Input.integrationSecondStar('./tests/example.txt')).toEqual(31)
+})
+
+test('integrationSecondStar this is how we do this here hahah', () => {
+    expect(Input.integrationSecondStar('./tests/real.txt')).toEqual(22014209)
+})
