@@ -23,3 +23,11 @@ export const extractNumbers = (input: string[]):number[][] =>{
 
     return resultArray;
 }
+
+export const calculateResult = (inputArray: number[][]): number => {
+    let result: number = 0;
+    for(let i = 0; i < inputArray.length; i++){
+        result += inputArray[i][0] * inputArray[i][1];
+    }
+    return result;
+}

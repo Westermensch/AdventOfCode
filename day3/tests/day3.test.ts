@@ -14,3 +14,19 @@ test("ëxtractNumbers__givenExtractedMulSteps__ReturnArrayOfNumberArrays", ()=>{
     const commandArray = Day3.extractMulSteps(input);
     if(commandArray) expect(Day3.extractNumbers(commandArray)).toEqual([[2,4], [5,5], [11,8], [8,5]]);
 })
+
+test("calculateResult__givenExtractedNumbers__Return161", ()=>{
+    const input = Day3.readTestFileIntoString('./day3/tests/example.txt');
+    const commandArray = Day3.extractMulSteps(input);
+    let numberArray: number[][] = [];
+    if(commandArray) numberArray = Day3.extractNumbers(commandArray);
+    expect(Day3.calculateResult(numberArray)).toBe(161);
+})
+
+test("calculateResult__givenRealNumbers__Return161", ()=>{
+    const input = Day3.readTestFileIntoString('./day3/tests/real.txt');
+    const commandArray = Day3.extractMulSteps(input);
+    let numberArray: number[][] = [];
+    if(commandArray) numberArray = Day3.extractNumbers(commandArray);
+    expect(Day3.calculateResult(numberArray)).toBe(189600467);
+})
