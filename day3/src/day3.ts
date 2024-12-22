@@ -9,3 +9,17 @@ export const extractMulSteps = (input: string): string[]|null => {
     const matches = input.match(regexPattern);
     return matches;
 }
+
+export const extractNumbers = (input: string[]):number[][] =>{
+    const regexPattern = /\d{1,3}/g;
+    const resultArray: number[][] = input.map(commandString =>{
+        const matches = commandString.match(regexPattern);
+        if (matches){ 
+            const num1 = parseInt(matches[0]); 
+            const num2 = parseInt(matches[1]); 
+        return [num1, num2]; 
+        } else { return []; }
+    })
+
+    return resultArray;
+}
