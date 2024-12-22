@@ -1,7 +1,7 @@
 import * as Input from "../src/inputParser"
 
 test('parseInputFile should return the content of the exapmle.txt as string', () => {
-    const [firstNumbers, secondNumbers] = Input.parseInputFile('./tests/example.txt');
+    const [firstNumbers, secondNumbers] = Input.parseInputFile('./day1/tests/example.txt');
     expect(firstNumbers).toEqual([3, 4, 2, 1, 3, 3]);
     expect(secondNumbers).toEqual([4, 3, 5, 3, 9, 3]);
 });
@@ -26,12 +26,12 @@ test('determineDifference should return added value of the abs differences of th
 });
 
 test('integration should return added value of parsed input file', () => {
-    const result: number = Input.integration('./tests/example.txt');
+    const result: number = Input.integration('./day1/tests/example.txt');
     expect(result).toEqual(11);
 });
 
 test('Too lazy to write a main function', () => {
-    const result: number = Input.integration('./tests/real.txt');
+    const result: number = Input.integration('./day1/tests/real.txt');
     expect(result).toEqual(1938424);
 });
 
@@ -46,9 +46,9 @@ test('findAmount should return 0 if the number is not in the array', () => {
 })
 
 test('integrationSecondStar is run with example text file, should return 31', () => {
-    expect(Input.integrationSecondStar('./tests/example.txt')).toEqual(31)
+    expect(Input.integrationSecondStar('./day1/tests/example.txt')).toEqual(31)
 })
 
 test('integrationSecondStar this is how we do this here hahah', () => {
-    expect(Input.integrationSecondStar('./tests/real.txt')).toEqual(22014209)
+    expect(Input.integrationSecondStar('./day1/tests/real.txt')).toEqual(22014209)
 })
